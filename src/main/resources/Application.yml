@@ -1,0 +1,35 @@
+autoCoding:
+  pomProjectGroupId: com.hpe.osp
+  pomParent:
+    'cloud':
+      groupId: com.hpe.ms
+      artifactId: ms-spring-cloud-service-parent
+      version: 1.5.3.RELEASE
+    'boot':
+      groupId: com.hpe.ms
+      artifactId: ms-spring-cloud-service-parent
+      version: 1.5.3.RELEASE
+  dataSourceConfigMap:
+    'oracle':
+      'type': 'org.apache.tomcat.jdbc.pool.DataSource'
+      'url': 'jdbc:oracle:thin:@${share.oracle.address}:LTE'
+      'driverClassName': 'oracle.jdbc.driver.OracleDriver'
+    'mySql':
+      'type': 'org.apache.tomcat.jdbc.pool.DataSource'
+      'url': 'jdbc:mysql://${share.mysql.address}/${dataBase}?useUnicode=true&characterEncoding=UTF-8&useSSL=false'
+      'driverClassName': 'com.mysql.jdbc.Driver'
+  jpa:
+    'showSql': 'false'
+    'hibernateDdlAuto': 'validate'
+    'propertiesHibernateDialect': 'org.hibernate.dialect.MySQL5Dialect'
+  columnTypeMap:
+    'VARCHAR': 'String'
+    'CHAR': 'String'
+    'TEXT': 'String'
+    'BIGINT': 'Long'
+    'SMALLINT': 'Short'
+    'INT': 'Integer'
+  columnTypeLengthMap:
+    'TINYINT':
+      '1': 'Boolean'
+      '0': 'Byte'
